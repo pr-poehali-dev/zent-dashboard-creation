@@ -24,9 +24,9 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80 border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center glow-purple">
-              <span className="text-2xl font-bold">Z</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+              <span className="text-2xl font-bold text-primary">Z</span>
             </div>
             <span className="text-2xl font-bold">ZENT</span>
           </div>
@@ -45,20 +45,20 @@ const Index = () => {
             ))}
           </div>
 
-          <Button className="glow-purple">Connect Wallet</Button>
+          <Button>Connect Wallet</Button>
         </div>
       </nav>
 
       <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/20 animate-pulse-glow" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-slide-right">
               <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-                <span className="text-glow-purple">ZENT</span>
+                <span>ZENT</span>
               </h1>
-              <p className="text-3xl text-secondary font-semibold">Transparency That Pays</p>
+              <p className="text-3xl text-primary font-medium">Transparency That Pays</p>
               <p className="text-xl text-muted-foreground">
                 Zenith Entry Network — revolutionary crypto project built on Solana blockchain with 100% transparent revenue distribution
               </p>
@@ -75,15 +75,14 @@ const Index = () => {
             </div>
 
             <div className="relative animate-slide-left">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-3xl blur-3xl opacity-50 animate-pulse-glow" />
-              <Card className="relative gradient-border backdrop-blur-sm">
+              <Card className="relative gradient-border subtle-gradient">
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
                       <span className="text-muted-foreground">Total Trading Fees</span>
                       <Icon name="TrendingUp" className="text-secondary" />
                     </div>
-                    <div className="text-4xl font-bold text-glow-purple">
+                    <div className="text-4xl font-bold">
                       ${mockData.totalFees.toLocaleString()}
                     </div>
                     <div className="space-y-3">
@@ -106,7 +105,7 @@ const Index = () => {
 
       <section id="about" className="min-h-screen flex items-center py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-16 text-glow-blue animate-fade-in">About ZENT</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">About ZENT</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -126,10 +125,10 @@ const Index = () => {
                 description: '70% of all fees go directly to token holders',
               },
             ].map((feature, index) => (
-              <Card key={index} className="gradient-border hover:scale-105 transition-transform duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+              <Card key={index} className="gradient-border hover:scale-105 transition-transform duration-300 animate-fade-in subtle-gradient" style={{ animationDelay: `${index * 0.2}s` }}>
                 <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center glow-purple">
-                    <Icon name={feature.icon as any} size={32} />
+                  <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center">
+                    <Icon name={feature.icon as any} size={32} className="text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
@@ -151,7 +150,7 @@ const Index = () => {
 
       <section id="dashboard" className="min-h-screen flex items-center py-20 bg-card/30">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-16 text-glow-purple animate-fade-in">Live Dashboard</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">Live Dashboard</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
@@ -162,7 +161,7 @@ const Index = () => {
               { label: 'Total Holders', value: mockData.holders.toLocaleString(), icon: 'Users', color: 'text-secondary' },
               { label: 'APY (Est.)', value: '24.5%', icon: 'Percent', color: 'text-primary' },
             ].map((stat, index) => (
-              <Card key={index} className="gradient-border hover:scale-105 transition-transform duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={index} className="gradient-border hover:scale-105 transition-transform duration-300 animate-fade-in subtle-gradient" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-muted-foreground">{stat.label}</span>
@@ -174,7 +173,7 @@ const Index = () => {
             ))}
           </div>
 
-          <Card className="gradient-border animate-fade-in">
+          <Card className="gradient-border animate-fade-in subtle-gradient">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6">Revenue Distribution</h3>
               <div className="space-y-6">
@@ -184,7 +183,7 @@ const Index = () => {
                     <span className="text-secondary font-bold">70%</span>
                   </div>
                   <div className="h-4 bg-muted rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-primary to-secondary w-[70%] animate-slide-right" />
+                    <div className="h-full bg-primary w-[70%] animate-slide-right" />
                   </div>
                 </div>
                 
@@ -205,11 +204,11 @@ const Index = () => {
 
       <section id="tokenomics" className="min-h-screen flex items-center py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-bold text-center mb-16 text-glow-blue animate-fade-in">Tokenomics</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 animate-fade-in">Tokenomics</h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-right">
-              <Card className="gradient-border">
+              <Card className="gradient-border subtle-gradient">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Icon name="PieChart" className="mr-2 text-primary" />
@@ -236,7 +235,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="gradient-border">
+              <Card className="gradient-border subtle-gradient">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Icon name="Repeat" className="mr-2 text-secondary" />
@@ -261,17 +260,16 @@ const Index = () => {
             </div>
 
             <div className="animate-slide-left">
-              <Card className="gradient-border relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 animate-pulse-glow" />
-                <CardContent className="p-8 relative z-10">
+              <Card className="gradient-border relative overflow-hidden subtle-gradient">
+                <CardContent className="p-8">
                   <div className="space-y-8">
                     <div className="text-center">
-                      <div className="text-6xl font-bold text-glow-purple mb-2">70/30</div>
+                      <div className="text-6xl font-bold text-primary mb-2">70/30</div>
                       <div className="text-xl text-muted-foreground">Split Ratio</div>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-card/50 rounded-lg p-6 backdrop-blur-sm">
+                      <div className="bg-card/50 rounded-lg p-6">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-lg font-bold">Holder Rewards</span>
                           <Icon name="TrendingUp" className="text-secondary" size={24} />
@@ -280,7 +278,7 @@ const Index = () => {
                         <p className="text-sm text-muted-foreground">Passive income for all token holders</p>
                       </div>
 
-                      <div className="bg-card/50 rounded-lg p-6 backdrop-blur-sm">
+                      <div className="bg-card/50 rounded-lg p-6">
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-lg font-bold">Growth Fund</span>
                           <Icon name="Rocket" className="text-primary" size={24} />
@@ -299,7 +297,7 @@ const Index = () => {
 
       <section id="contact" className="py-20 bg-card/30">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-5xl font-bold mb-8 text-glow-purple animate-fade-in">Join ZENT Community</h2>
+          <h2 className="text-5xl font-bold mb-8 animate-fade-in">Join ZENT Community</h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
             Be part of the future of transparent crypto investing
           </p>
@@ -324,7 +322,7 @@ const Index = () => {
             ))}
           </div>
 
-          <Card className="max-w-md mx-auto gradient-border animate-fade-in">
+          <Card className="max-w-md mx-auto gradient-border animate-fade-in subtle-gradient">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">Subscribe for Updates</h3>
               <div className="flex space-x-2">
@@ -333,7 +331,7 @@ const Index = () => {
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-2 bg-muted rounded-lg border border-border focus:border-primary outline-none transition-colors"
                 />
-                <Button className="glow-purple">
+                <Button>
                   <Icon name="Send" size={20} />
                 </Button>
               </div>
@@ -346,10 +344,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-xl font-bold">Z</span>
-              </div>
-              <span className="text-xl font-bold">ZENT</span>
+              <span className="text-2xl font-bold text-primary">ZENT</span>
             </div>
             
             <div className="text-muted-foreground">
